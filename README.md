@@ -69,17 +69,17 @@ class Request {
 
 	public function response() : String // Fetches the response body.
 
-	public static function parallel(Array $options) : ParallelRequest // Creates an instance of ParallelRequest to handle multiple URLs. See [ParallelRequest constructor options](#constructor-request-options-example)
+	public static function parallel(Array $options) : ParallelRequest // Creates an instance of ParallelRequest to handle multiple URLs. See the docs for ParallelRequest
 }
 ```
 
 ### Multiple requests - `ParallelRequest`
 
-The `ParallelRequest` class allows you to fetch a number of resources asynchronously, providing a large performance boost over making sequential requests.
+The `ParallelRequest` class allows you to fetch a number of resources asynchronously, providing a large performance boost over making sequential requests. You can either create one directly using the `new` keyword or by calling `Request::parallel()` statically.
 
 #### Methods
 
-Most of the API is the same as for a regular request, except for the constructor taking an array of request options. The array must consist of keys matching the parameters of the class - if provided, these keys will be used as settings for the individual requests, with the missing values being filled with class defaults.
+Most of the API is the same as for a regular request, except for the constructor taking an array of request options. The array must consist of keys matching the parameters of the class - if provided, these keys will be used as settings for the individual requests, with the missing values being filled with class defaults. See [ParallelRequest constructor options](#constructor-request-options-example) for more details.
 
 ```(php)
 class ParallelRequest {
