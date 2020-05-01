@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function($class) {
-	require "class.$class.php";
+	require dirname(__FILE__)."/class.$class.php";
 });
 
 ?>

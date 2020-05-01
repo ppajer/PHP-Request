@@ -2,13 +2,13 @@
 
 class ParallelRequest extends Request{
 
-	private $urls;
+	private $settings;
 	private $mh;
 	private $handles = array();
 	private $result = array();
 
-	public function __construct($urls) {
-		$this->urls = $urls;
+	public function __construct($settings) {
+		$this->settings = $settings;
 		$this->mh = curl_multi_init();
 		$this->defaults();
 		$this->setup();
@@ -28,7 +28,12 @@ class ParallelRequest extends Request{
 	}
 
 	private function setup() {
-		foreach ($this->urls as $id => $data) {
+
+		// Reset to initial state
+		$this->defaults();
+		foreach ($this->settings as $id => $data) {
+
+			// Set up for each request
 			$ch = $this->init();
 			foreach ($data as $key => $value) {
 				$this->$key = $value;

@@ -8,7 +8,7 @@ To start using this library, you have two options: add it to your project's depe
 
 ## Usage
 
-### Single requests - `class.Request.php`
+### Single requests - `Request`
 
 The `Request` class represents a single request to a resource, and its settings. It provides a simple fluent API to create and edit requests, and some built-in constants for widespread options to save you the time of having to look up User Agent strings and content types for the most common uses. Additional convenience constants will be added over time.
 
@@ -68,10 +68,12 @@ class Request {
 	public function send() : Request // Processes the request.
 
 	public function response() : String // Fetches the response body.
+
+	public static function parallel(Array $options) : ParallelRequest // Creates an instance of ParallelRequest to handle multiple URLs. See [ParallelRequest constructor options](#constructor-request-options-example)
 }
 ```
 
-### Multiple requests - `class.ParallelRequest.php`
+### Multiple requests - `ParallelRequest`
 
 The `ParallelRequest` class allows you to fetch a number of resources asynchronously, providing a large performance boost over making sequential requests.
 
