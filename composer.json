@@ -1,0 +1,20 @@
+{
+	"name": "ppajer/php-request",
+	"description": "Intuitive and fluent wrappers for making cURL and multi-cURL requests.",
+    "keywords": ["http", "request", "curl", "async", "parallel"],
+    "homepage": "https://github.com/ppajer/PHP-Request",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Pajer",
+            "email": "peter.p.pajer@gmail.com"
+        }
+    ],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/ppajer/PHP-Request"
+		}
+	]
+}
