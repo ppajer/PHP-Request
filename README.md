@@ -41,6 +41,7 @@ class Request {
 	public $content; // Default: null
 	public $headers; // Default: null
 	public $contentType; // Default: CONTENT_TYPE_TXT
+	public $follow; // Default: true
 }
 ```
 
@@ -64,6 +65,8 @@ class Request {
 	public function headers(Array $headers) : Request // Sets the headers of the request.
 
 	public function contentType(String $contentType) : Request // Sets the contentType of the request.
+
+	public function follow(Bool $follow) : Request // Sets if the request should follow redirects.
 
 	public function send() : Request // Processes the request.
 

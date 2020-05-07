@@ -26,6 +26,7 @@ class Request {
 	public $content;
 	public $headers;
 	public $contentType;
+	public $follow;
 
 	private $ch;
 	private $response;
@@ -43,6 +44,7 @@ class Request {
 		$this->content = null;
 		$this->headers = null;
 		$this->contentType = self::CONTENT_TYPE_TXT;
+		$this->follow = true;
 		$this->return = 1;
 	}
 
@@ -76,6 +78,10 @@ class Request {
 		return $this->_set('contentType', $contentType);
 	}
 
+	public function follow($follow) {
+		return $this->_set('follow', $follow);
+	}
+
 	public function send() {
 		$this->response = curl_exec($this->ch);
 	}
@@ -92,6 +98,7 @@ class Request {
 		curl_setopt($ch, CURLOPT_USERAGENT, $this->UA);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, $this->return);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $this->method); 
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $this->follow);
 		if (!is_null($this->content)) {
 			if ($this->method === 'GET') {
 				$this->URL = $this->URL.'?'.http_build_query($this->content);
