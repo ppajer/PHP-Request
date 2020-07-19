@@ -1,5 +1,5 @@
 {
-	"name": "ppajer/php-request",
+	"name": "ppajer/request",
 	"description": "Intuitive and fluent wrappers for making cURL and multi-cURL requests.",
     "keywords": ["http", "request", "curl", "async", "parallel"],
     "homepage": "https://github.com/ppajer/PHP-Request",
@@ -11,6 +11,11 @@
             "email": "peter.p.pajer@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "ppajer\\":"src/"
+        }
+    },
 	"repositories": [
 		{
 			"type": "vcs",

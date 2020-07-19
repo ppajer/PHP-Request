@@ -1,5 +1,7 @@
 <?php
 
+namespace ppajer;
+
 class ParallelRequest extends Request{
 
 	private $settings;
