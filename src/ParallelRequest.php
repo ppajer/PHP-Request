@@ -2,7 +2,7 @@
 
 namespace ppajer;
 
-use Request;
+use \ppajer\Request;
 
 class ParallelRequest extends Request{
 
