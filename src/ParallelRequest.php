@@ -2,6 +2,8 @@
 
 namespace ppajer;
 
+use Request;
+
 class ParallelRequest extends Request{
 
 	private $settings;
